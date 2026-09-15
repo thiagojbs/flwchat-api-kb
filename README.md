@@ -39,6 +39,9 @@ Não usa Claude Code? Escolha um:
 
 Passo a passo por ferramenta, com os caminhos exatos: **[INSTALL.md](INSTALL.md)**.
 
+Sem instalar nada: **[COLAR-NO-CHAT.md](COLAR-NO-CHAT.md)** é um bloco pronto para colar direto na
+conversa do Claude ou do ChatGPT (mesmo conteúdo em `.txt`, para mandar por WhatsApp).
+
 **Cada pessoa usa o próprio token** (`Ajustes > Integrações > Integração via API`). Nunca comite um
 `pn_...` aqui — o repositório é público.
 
