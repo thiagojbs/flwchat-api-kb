@@ -1,0 +1,3334 @@
+{
+  "item": [
+    {
+      "name": "Cards",
+      "description": "",
+      "item": [
+        {
+          "id": "f42a917b-d9cf-4d7e-9dae-1b5a92268730",
+          "name": "Remover anotação",
+          "request": {
+            "name": "Remover anotação",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "panel",
+                "card",
+                ":cardId",
+                "note",
+                ":noteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "cardId",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do card.",
+                    "type": "text/plain"
+                  }
+                },
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "noteId",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID da anotação.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "d20c9cde-f900-412f-9258-76809901b13d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    "card",
+                    ":cardId",
+                    "note",
+                    ":noteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cardId"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID da anotação.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "noteId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [],
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "da8d53db-643d-4171-b1f3-3a369547dfea",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    "card",
+                    ":cardId",
+                    "note",
+                    ":noteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cardId"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID da anotação.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "noteId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "217a17b4-596a-4e48-b30c-8913ecc8368c",
+          "name": "Listar anotações",
+          "request": {
+            "name": "Listar anotações",
+            "description": {
+              "content": "Listagem paginada de anotações.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "panel",
+                "card",
+                ":cardId",
+                "note"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "CreatedAt.Before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "CreatedAt.After",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "UpdatedAt.Before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "UpdatedAt.After",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Número da página a ser obtida.",
+                    "type": "text/plain"
+                  },
+                  "key": "PageNumber",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Tamanho da página a ser obtida.",
+                    "type": "text/plain"
+                  },
+                  "key": "PageSize",
+                  "value": "15"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                    "type": "text/plain"
+                  },
+                  "key": "OrderBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                    "type": "text/plain"
+                  },
+                  "key": "OrderDirection",
+                  "value": "DESCENDING"
+                }
+              ],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "cardId",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do card.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "e970be48-2e03-44ab-b169-836c539b0898",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    "card",
+                    ":cardId",
+                    "note"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Número da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tamanho da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageSize",
+                      "value": "15"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderDirection",
+                      "value": "DESCENDING"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cardId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pageNumber\": 1,\n  \"pageSize\": 15,\n  \"orderBy\": \"<string>\",\n  \"orderDirection\": \"DESCENDING\",\n  \"items\": [\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"cardId\": \"<uuid>\",\n      \"userId\": \"<uuid>\",\n      \"text\": \"<string>\",\n      \"files\": [\n        {\n          \"id\": \"<uuid>\",\n          \"companyId\": \"<uuid>\",\n          \"userId\": \"<uuid>\",\n          \"name\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"mimeType\": \"<string>\",\n          \"type\": \"EXCEL\",\n          \"publicUrl\": \"<string>\",\n          \"publicUrlDownload\": \"<string>\",\n          \"size\": \"<long>\",\n          \"isThumbnail\": \"<boolean>\",\n          \"thumbnail\": {\n            \"id\": \"<uuid>\",\n            \"publicUrl\": \"<string>\"\n          }\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"companyId\": \"<uuid>\",\n          \"userId\": \"<uuid>\",\n          \"name\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"mimeType\": \"<string>\",\n          \"type\": \"VIDEO\",\n          \"publicUrl\": \"<string>\",\n          \"publicUrlDownload\": \"<string>\",\n          \"size\": \"<long>\",\n          \"isThumbnail\": \"<boolean>\",\n          \"thumbnail\": {\n            \"id\": \"<uuid>\",\n            \"publicUrl\": \"<string>\"\n          }\n        }\n      ],\n      \"isFromPublicApi\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"cardId\": \"<uuid>\",\n      \"userId\": \"<uuid>\",\n      \"text\": \"<string>\",\n      \"files\": [\n        {\n          \"id\": \"<uuid>\",\n          \"companyId\": \"<uuid>\",\n          \"userId\": \"<uuid>\",\n          \"name\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"mimeType\": \"<string>\",\n          \"type\": \"IMAGE\",\n          \"publicUrl\": \"<string>\",\n          \"publicUrlDownload\": \"<string>\",\n          \"size\": \"<long>\",\n          \"isThumbnail\": \"<boolean>\",\n          \"thumbnail\": {\n            \"id\": \"<uuid>\",\n            \"publicUrl\": \"<string>\"\n          }\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"companyId\": \"<uuid>\",\n          \"userId\": \"<uuid>\",\n          \"name\": \"<string>\",\n          \"extension\": \"<string>\",\n          \"mimeType\": \"<string>\",\n          \"type\": \"VIDEO\",\n          \"publicUrl\": \"<string>\",\n          \"publicUrlDownload\": \"<string>\",\n          \"size\": \"<long>\",\n          \"isThumbnail\": \"<boolean>\",\n          \"thumbnail\": {\n            \"id\": \"<uuid>\",\n            \"publicUrl\": \"<string>\"\n          }\n        }\n      ],\n      \"isFromPublicApi\": \"<boolean>\"\n    }\n  ],\n  \"totalItems\": \"<integer>\",\n  \"totalPages\": \"<integer>\",\n  \"hasMorePages\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bcfd2231-3a62-4a17-9a44-ae86c1c08901",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    "card",
+                    ":cardId",
+                    "note"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Número da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tamanho da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageSize",
+                      "value": "15"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderDirection",
+                      "value": "DESCENDING"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cardId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f9829a8-df47-4c55-bacf-e420eb50828d",
+          "name": "Adicionar anotação",
+          "request": {
+            "name": "Adicionar anotação",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "panel",
+                "card",
+                ":cardId",
+                "note"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "cardId",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do card.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"fileUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f0928663-187e-41bf-a64d-4ec34c68cf91",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    "card",
+                    ":cardId",
+                    "note"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cardId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"fileUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"companyId\": \"<uuid>\",\n  \"panelId\": \"<uuid>\",\n  \"cardId\": \"<uuid>\",\n  \"userId\": \"<uuid>\",\n  \"text\": \"<string>\",\n  \"files\": [\n    {\n      \"id\": \"<uuid>\",\n      \"companyId\": \"<uuid>\",\n      \"userId\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"extension\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"type\": \"PDF\",\n      \"publicUrl\": \"<string>\",\n      \"publicUrlDownload\": \"<string>\",\n      \"size\": \"<long>\",\n      \"isThumbnail\": \"<boolean>\",\n      \"thumbnail\": {\n        \"id\": \"<uuid>\",\n        \"publicUrl\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"companyId\": \"<uuid>\",\n      \"userId\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"extension\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"type\": \"UNDEFINED\",\n      \"publicUrl\": \"<string>\",\n      \"publicUrlDownload\": \"<string>\",\n      \"size\": \"<long>\",\n      \"isThumbnail\": \"<boolean>\",\n      \"thumbnail\": {\n        \"id\": \"<uuid>\",\n        \"publicUrl\": \"<string>\"\n      }\n    }\n  ],\n  \"isFromPublicApi\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f6d5743c-e346-4387-b6a7-d7cd140c3331",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    "card",
+                    ":cardId",
+                    "note"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "cardId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"fileUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58090eba-08a0-4947-812b-442792f82016",
+          "name": "Listar",
+          "request": {
+            "name": "Listar",
+            "description": {
+              "content": "Listagem paginada de cards.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "panel",
+                "card"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do painel.",
+                    "type": "text/plain"
+                  },
+                  "key": "PanelId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Filtro por ID da etapa.",
+                    "type": "text/plain"
+                  },
+                  "key": "StepId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Filtro por ID do contato.",
+                    "type": "text/plain"
+                  },
+                  "key": "ContactId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Filtro por ID do responsável.",
+                    "type": "text/plain"
+                  },
+                  "key": "ResponsibleUserId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Filtro textual. A busca é realizada nos atributos textuais relevantes do item.",
+                    "type": "text/plain"
+                  },
+                  "key": "TextFilter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Detalhes que devem ser incluídos na resposta.",
+                    "type": "text/plain"
+                  },
+                  "key": "IncludeDetails",
+                  "value": "ResponsibleUser"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Detalhes que devem ser incluídos na resposta.",
+                    "type": "text/plain"
+                  },
+                  "key": "IncludeDetails",
+                  "value": "LostReason"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Filtro por situação do card.",
+                    "type": "text/plain"
+                  },
+                  "key": "Statuses",
+                  "value": "LOST"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Filtro por situação do card.",
+                    "type": "text/plain"
+                  },
+                  "key": "Statuses",
+                  "value": "OPEN"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "CreatedAt.Before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "CreatedAt.After",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "UpdatedAt.Before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "UpdatedAt.After",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Número da página a ser obtida.",
+                    "type": "text/plain"
+                  },
+                  "key": "PageNumber",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Tamanho da página a ser obtida.",
+                    "type": "text/plain"
+                  },
+                  "key": "PageSize",
+                  "value": "15"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                    "type": "text/plain"
+                  },
+                  "key": "OrderBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                    "type": "text/plain"
+                  },
+                  "key": "OrderDirection",
+                  "value": "DESCENDING"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "febea32e-b925-423f-95df-627a64495ee9",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel",
+                    "card"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do painel.",
+                        "type": "text/plain"
+                      },
+                      "key": "PanelId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por ID da etapa.",
+                        "type": "text/plain"
+                      },
+                      "key": "StepId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por ID do contato.",
+                        "type": "text/plain"
+                      },
+                      "key": "ContactId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por ID do responsável.",
+                        "type": "text/plain"
+                      },
+                      "key": "ResponsibleUserId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro textual. A busca é realizada nos atributos textuais relevantes do item.",
+                        "type": "text/plain"
+                      },
+                      "key": "TextFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Detalhes que devem ser incluídos na resposta.",
+                        "type": "text/plain"
+                      },
+                      "key": "IncludeDetails",
+                      "value": "LostReason"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por situação do card.",
+                        "type": "text/plain"
+                      },
+                      "key": "Statuses",
+                      "value": "OPEN"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Número da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tamanho da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageSize",
+                      "value": "15"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderDirection",
+                      "value": "DESCENDING"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pageNumber\": 1,\n  \"pageSize\": 15,\n  \"orderBy\": \"<string>\",\n  \"orderDirection\": \"ASCENDING\",\n  \"items\": [\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"panelTitle\": \"<string>\",\n      \"stepId\": \"<uuid>\",\n      \"stepTitle\": \"<string>\",\n      \"stepPhase\": \"INITIAL\",\n      \"position\": \"<double>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"key\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"dueDate\": \"<dateTime>\",\n      \"isOverdue\": \"<boolean>\",\n      \"tagIds\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"sessionId\": \"<uuid>\",\n      \"monetaryAmount\": \"<double>\",\n      \"responsibleUserId\": \"<uuid>\",\n      \"responsibleUser\": {\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      \"contactIds\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"contacts\": [\n        {\n          \"id\": \"<uuid>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"customFields\": {\n        \"key_0\": \"\",\n        \"key_1\": \"\",\n        \"key_2\": \"\"\n      },\n      \"metadata\": {\n        \"key_0\": \"\",\n        \"key_1\": \"\"\n      },\n      \"status\": \"LOST\",\n      \"lostReason\": {\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"panelTitle\": \"<string>\",\n      \"stepId\": \"<uuid>\",\n      \"stepTitle\": \"<string>\",\n      \"stepPhase\": \"INITIAL\",\n      \"position\": \"<double>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"key\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"dueDate\": \"<dateTime>\",\n      \"isOverdue\": \"<boolean>\",\n      \"tagIds\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"sessionId\": \"<uuid>\",\n      \"monetaryAmount\": \"<double>\",\n      \"responsibleUserId\": \"<uuid>\",\n      \"responsibleUser\": {\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      \"contactIds\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"contacts\": [\n        {\n          \"id\": \"<uuid>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"customFields\": {\n        \"key_0\": \"\"\n      },\n      \"metadata\": {\n        \"key_0\": \"\",\n        \"key_1\": \"\",\n        \"key_2\": \"\"\n      },\n      \"status\": \"LOST\",\n      \"lostReason\": {\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      }\n    }\n  ],\n  \"totalItems\": \"<integer>\",\n  \"totalPages\": \"<integer>\",\n  \"hasMorePages\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc539668-c00a-449d-9eba-30d62e68a7d1",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel",
+                    "card"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do painel.",
+                        "type": "text/plain"
+                      },
+                      "key": "PanelId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por ID da etapa.",
+                        "type": "text/plain"
+                      },
+                      "key": "StepId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por ID do contato.",
+                        "type": "text/plain"
+                      },
+                      "key": "ContactId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por ID do responsável.",
+                        "type": "text/plain"
+                      },
+                      "key": "ResponsibleUserId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro textual. A busca é realizada nos atributos textuais relevantes do item.",
+                        "type": "text/plain"
+                      },
+                      "key": "TextFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Detalhes que devem ser incluídos na resposta.",
+                        "type": "text/plain"
+                      },
+                      "key": "IncludeDetails",
+                      "value": "LostReason"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por situação do card.",
+                        "type": "text/plain"
+                      },
+                      "key": "Statuses",
+                      "value": "OPEN"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Número da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tamanho da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageSize",
+                      "value": "15"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderDirection",
+                      "value": "DESCENDING"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "697d9e04-d23e-4872-8673-6ef7afa86f18",
+          "name": "Criar",
+          "request": {
+            "name": "Criar",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "panel",
+                "card"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stepId\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"position\": \"<double>\",\n  \"dueDate\": \"<dateTime>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contactIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"customFields\": {\n    \"key_0\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "54762475-5f62-43cd-a61c-ab2d327627e4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel",
+                    "card"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stepId\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"position\": \"<double>\",\n  \"dueDate\": \"<dateTime>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contactIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"customFields\": {\n    \"key_0\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"companyId\": \"<uuid>\",\n  \"panelId\": \"<uuid>\",\n  \"panelTitle\": \"<string>\",\n  \"stepId\": \"<uuid>\",\n  \"stepTitle\": \"<string>\",\n  \"stepPhase\": \"FINAL\",\n  \"position\": \"<double>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"key\": \"<string>\",\n  \"number\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"isOverdue\": \"<boolean>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"responsibleUser\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  },\n  \"contactIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"contacts\": [\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"customFields\": {\n    \"key_0\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\",\n    \"key_2\": \"\"\n  },\n  \"status\": \"WON\",\n  \"lostReason\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "102e3b6e-a5da-4761-bf11-e9ccf6d053e1",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel",
+                    "card"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stepId\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"position\": \"<double>\",\n  \"dueDate\": \"<dateTime>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contactIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"customFields\": {\n    \"key_0\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b72e6481-767d-4ac1-ab52-55b91a6dab19",
+          "name": "Obter por ID",
+          "request": {
+            "name": "Obter por ID",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "panel",
+                "card",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Detalhes que devem ser incluídos na resposta.",
+                    "type": "text/plain"
+                  },
+                  "key": "IncludeDetails",
+                  "value": "ResponsibleUser"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Detalhes que devem ser incluídos na resposta.",
+                    "type": "text/plain"
+                  },
+                  "key": "IncludeDetails",
+                  "value": "LostReason"
+                }
+              ],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do card.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "0b5a5a40-597f-426c-8522-91cc2278b378",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel",
+                    "card",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Detalhes que devem ser incluídos na resposta.",
+                        "type": "text/plain"
+                      },
+                      "key": "IncludeDetails",
+                      "value": "LostReason"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"companyId\": \"<uuid>\",\n  \"panelId\": \"<uuid>\",\n  \"panelTitle\": \"<string>\",\n  \"stepId\": \"<uuid>\",\n  \"stepTitle\": \"<string>\",\n  \"stepPhase\": \"FINAL\",\n  \"position\": \"<double>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"key\": \"<string>\",\n  \"number\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"isOverdue\": \"<boolean>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"responsibleUser\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  },\n  \"contactIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"contacts\": [\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"customFields\": {\n    \"key_0\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\",\n    \"key_2\": \"\"\n  },\n  \"status\": \"WON\",\n  \"lostReason\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce6dddda-d010-4e22-b262-38515a58b208",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel",
+                    "card",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Detalhes que devem ser incluídos na resposta.",
+                        "type": "text/plain"
+                      },
+                      "key": "IncludeDetails",
+                      "value": "LostReason"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f60d30a4-3254-410e-adcc-856dcea31452",
+          "name": "Duplicar",
+          "request": {
+            "name": "Duplicar",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "panel",
+                "card",
+                ":id",
+                "duplicate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do card.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"copyToStepId\": \"<uuid>\",\n  \"options\": {\n    \"archiveOriginalCard\": \"<boolean>\",\n    \"fields\": [\n      \"All\",\n      \"All\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c994226-acdc-4c3f-8825-dcc27e61e29c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel",
+                    "card",
+                    ":id",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"copyToStepId\": \"<uuid>\",\n  \"options\": {\n    \"archiveOriginalCard\": \"<boolean>\",\n    \"fields\": [\n      \"All\",\n      \"All\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"companyId\": \"<uuid>\",\n  \"panelId\": \"<uuid>\",\n  \"panelTitle\": \"<string>\",\n  \"stepId\": \"<uuid>\",\n  \"stepTitle\": \"<string>\",\n  \"stepPhase\": \"FINAL\",\n  \"position\": \"<double>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"key\": \"<string>\",\n  \"number\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"isOverdue\": \"<boolean>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"responsibleUser\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  },\n  \"contactIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"contacts\": [\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"customFields\": {\n    \"key_0\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\",\n    \"key_2\": \"\"\n  },\n  \"status\": \"WON\",\n  \"lostReason\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5465550c-806b-452c-ae9b-bb6ee1f8c45a",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel",
+                    "card",
+                    ":id",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"copyToStepId\": \"<uuid>\",\n  \"options\": {\n    \"archiveOriginalCard\": \"<boolean>\",\n    \"fields\": [\n      \"All\",\n      \"All\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff809477-31ad-4c9d-af6e-9470d8916591",
+          "name": "Atualizar",
+          "request": {
+            "name": "Atualizar",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "panel",
+                "card",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do card.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fields\": [\n    \"Title\",\n    \"ContactIds\"\n  ],\n  \"stepId\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"position\": \"<double>\",\n  \"dueDate\": \"<dateTime>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contactIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"status\": \"LOST\",\n  \"lostReasonId\": \"<uuid>\",\n  \"customFields\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\",\n    \"key_2\": \"\",\n    \"key_3\": \"\",\n    \"key_4\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\"\n  },\n  \"options\": {\n    \"upsertTagOperation\": \"ReplaceAll\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8d80ed73-78f5-470c-b857-dc9250d6f5e0",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "panel",
+                    "card",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fields\": [\n    \"Title\",\n    \"ContactIds\"\n  ],\n  \"stepId\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"position\": \"<double>\",\n  \"dueDate\": \"<dateTime>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contactIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"status\": \"LOST\",\n  \"lostReasonId\": \"<uuid>\",\n  \"customFields\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\",\n    \"key_2\": \"\",\n    \"key_3\": \"\",\n    \"key_4\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\"\n  },\n  \"options\": {\n    \"upsertTagOperation\": \"ReplaceAll\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"companyId\": \"<uuid>\",\n  \"panelId\": \"<uuid>\",\n  \"panelTitle\": \"<string>\",\n  \"stepId\": \"<uuid>\",\n  \"stepTitle\": \"<string>\",\n  \"stepPhase\": \"FINAL\",\n  \"position\": \"<double>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"key\": \"<string>\",\n  \"number\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"isOverdue\": \"<boolean>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"responsibleUser\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  },\n  \"contactIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"contacts\": [\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"customFields\": {\n    \"key_0\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\",\n    \"key_2\": \"\"\n  },\n  \"status\": \"WON\",\n  \"lostReason\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10194591-5307-4834-a830-02fca4d78de5",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "panel",
+                    "card",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do card.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fields\": [\n    \"Title\",\n    \"ContactIds\"\n  ],\n  \"stepId\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"position\": \"<double>\",\n  \"dueDate\": \"<dateTime>\",\n  \"responsibleUserId\": \"<uuid>\",\n  \"tagIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"contactIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"sessionId\": \"<uuid>\",\n  \"monetaryAmount\": \"<double>\",\n  \"status\": \"LOST\",\n  \"lostReasonId\": \"<uuid>\",\n  \"customFields\": {\n    \"key_0\": \"\",\n    \"key_1\": \"\",\n    \"key_2\": \"\",\n    \"key_3\": \"\",\n    \"key_4\": \"\"\n  },\n  \"metadata\": {\n    \"key_0\": \"\"\n  },\n  \"options\": {\n    \"upsertTagOperation\": \"ReplaceAll\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Painéis",
+      "description": "",
+      "item": [
+        {
+          "id": "557bf872-a2e7-4abe-b91b-9e64d55fb1de",
+          "name": "Obter por ID",
+          "request": {
+            "name": "Obter por ID",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "panel",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Detalhes que devem ser incluídos na resposta.",
+                    "type": "text/plain"
+                  },
+                  "key": "IncludeDetails",
+                  "value": "StepsCardCount"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Detalhes que devem ser incluídos na resposta.",
+                    "type": "text/plain"
+                  },
+                  "key": "IncludeDetails",
+                  "value": "StepsFields"
+                }
+              ],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do painel.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "680cdbaa-2103-434f-b112-2b144f12e8d3",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Detalhes que devem ser incluídos na resposta.",
+                        "type": "text/plain"
+                      },
+                      "key": "IncludeDetails",
+                      "value": "StepsFields"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do painel.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"companyId\": \"<uuid>\",\n  \"archived\": \"<boolean>\",\n  \"scope\": \"COMPANY\",\n  \"departmentIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"userId\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"thumbnailId\": \"<uuid>\",\n  \"thumbnailFile\": {\n    \"id\": \"<uuid>\",\n    \"companyId\": \"<uuid>\",\n    \"userId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"extension\": \"<string>\",\n    \"mimeType\": \"<string>\",\n    \"type\": \"PDF\",\n    \"publicUrl\": \"<string>\",\n    \"publicUrlDownload\": \"<string>\",\n    \"size\": \"<long>\",\n    \"isThumbnail\": \"<boolean>\",\n    \"thumbnail\": {\n      \"id\": \"<uuid>\",\n      \"publicUrl\": \"<string>\"\n    }\n  },\n  \"key\": \"<string>\",\n  \"overdueCardCount\": \"<integer>\",\n  \"stepTitles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tags\": [\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"nameColor\": \"<string>\",\n      \"bgColor\": \"<string>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"nameColor\": \"<string>\",\n      \"bgColor\": \"<string>\"\n    }\n  ],\n  \"steps\": [\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"archived\": \"<boolean>\",\n      \"position\": \"<double>\",\n      \"title\": \"<string>\",\n      \"isInitial\": \"<boolean>\",\n      \"isFinal\": \"<boolean>\",\n      \"cardCount\": \"<integer>\",\n      \"overdueCardCount\": \"<integer>\",\n      \"monetaryAmount\": \"<double>\",\n      \"fields\": [\n        {\n          \"key\": \"<string>\",\n          \"type\": \"CUSTOM_FIELD\",\n          \"position\": \"<integer>\",\n          \"visible\": \"<boolean>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"type\": \"DEFAULT_FIELD\",\n          \"position\": \"<integer>\",\n          \"visible\": \"<boolean>\"\n        }\n      ],\n      \"cards\": {\n        \"pageNumber\": 1,\n        \"pageSize\": 15,\n        \"orderBy\": \"<string>\",\n        \"orderDirection\": \"DESCENDING\",\n        \"items\": [\n          {\n            \"id\": \"<uuid>\",\n            \"createdAt\": \"<dateTime>\",\n            \"updatedAt\": \"<dateTime>\",\n            \"companyId\": \"<uuid>\",\n            \"panelId\": \"<uuid>\",\n            \"panelTitle\": \"<string>\",\n            \"stepId\": \"<uuid>\",\n            \"stepTitle\": \"<string>\",\n            \"stepPhase\": \"FINAL\",\n            \"position\": \"<double>\",\n            \"title\": \"<string>\",\n            \"description\": \"<string>\",\n            \"key\": \"<string>\",\n            \"number\": \"<integer>\",\n            \"dueDate\": \"<dateTime>\",\n            \"isOverdue\": \"<boolean>\",\n            \"tagIds\": [\n              \"<uuid>\",\n              \"<uuid>\"\n            ],\n            \"sessionId\": \"<uuid>\",\n            \"monetaryAmount\": \"<double>\",\n            \"responsibleUserId\": \"<uuid>\",\n            \"responsibleUser\": {\n              \"id\": \"<uuid>\",\n              \"name\": \"<string>\"\n            },\n            \"contactIds\": [\n              \"<uuid>\",\n              \"<uuid>\"\n            ],\n            \"contacts\": [\n              {\n                \"id\": \"<uuid>\",\n                \"name\": \"<string>\"\n              },\n              {\n                \"id\": \"<uuid>\",\n                \"name\": \"<string>\"\n              }\n            ],\n            \"customFields\": {\n              \"key_0\": \"\"\n            },\n            \"metadata\": {\n              \"key_0\": \"\",\n              \"key_1\": \"\"\n            },\n            \"archived\": \"<boolean>\"\n          },\n          {\n            \"id\": \"<uuid>\",\n            \"createdAt\": \"<dateTime>\",\n            \"updatedAt\": \"<dateTime>\",\n            \"companyId\": \"<uuid>\",\n            \"panelId\": \"<uuid>\",\n            \"panelTitle\": \"<string>\",\n            \"stepId\": \"<uuid>\",\n            \"stepTitle\": \"<string>\",\n            \"stepPhase\": \"NONE\",\n            \"position\": \"<double>\",\n            \"title\": \"<string>\",\n            \"description\": \"<string>\",\n            \"key\": \"<string>\",\n            \"number\": \"<integer>\",\n            \"dueDate\": \"<dateTime>\",\n            \"isOverdue\": \"<boolean>\",\n            \"tagIds\": [\n              \"<uuid>\",\n              \"<uuid>\"\n            ],\n            \"sessionId\": \"<uuid>\",\n            \"monetaryAmount\": \"<double>\",\n            \"responsibleUserId\": \"<uuid>\",\n            \"responsibleUser\": {\n              \"id\": \"<uuid>\",\n              \"name\": \"<string>\"\n            },\n            \"contactIds\": [\n              \"<uuid>\",\n              \"<uuid>\"\n            ],\n            \"contacts\": [\n              {\n                \"id\": \"<uuid>\",\n                \"name\": \"<string>\"\n              },\n              {\n                \"id\": \"<uuid>\",\n                \"name\": \"<string>\"\n              }\n            ],\n            \"customFields\": {\n              \"key_0\": \"\"\n            },\n            \"metadata\": {\n              \"key_0\": \"\"\n            },\n            \"archived\": \"<boolean>\"\n          }\n        ],\n        \"totalItems\": \"<integer>\",\n        \"totalPages\": \"<integer>\",\n        \"hasMorePages\": \"<boolean>\"\n      }\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"archived\": \"<boolean>\",\n      \"position\": \"<double>\",\n      \"title\": \"<string>\",\n      \"isInitial\": \"<boolean>\",\n      \"isFinal\": \"<boolean>\",\n      \"cardCount\": \"<integer>\",\n      \"overdueCardCount\": \"<integer>\",\n      \"monetaryAmount\": \"<double>\",\n      \"fields\": [\n        {\n          \"key\": \"<string>\",\n          \"type\": \"CUSTOM_FIELD\",\n          \"position\": \"<integer>\",\n          \"visible\": \"<boolean>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"type\": \"CUSTOM_FIELD\",\n          \"position\": \"<integer>\",\n          \"visible\": \"<boolean>\"\n        }\n      ],\n      \"cards\": {\n        \"pageNumber\": 1,\n        \"pageSize\": 15,\n        \"orderBy\": \"<string>\",\n        \"orderDirection\": \"DESCENDING\",\n        \"items\": [\n          {\n            \"id\": \"<uuid>\",\n            \"createdAt\": \"<dateTime>\",\n            \"updatedAt\": \"<dateTime>\",\n            \"companyId\": \"<uuid>\",\n            \"panelId\": \"<uuid>\",\n            \"panelTitle\": \"<string>\",\n            \"stepId\": \"<uuid>\",\n            \"stepTitle\": \"<string>\",\n            \"stepPhase\": \"INITIAL\",\n            \"position\": \"<double>\",\n            \"title\": \"<string>\",\n            \"description\": \"<string>\",\n            \"key\": \"<string>\",\n            \"number\": \"<integer>\",\n            \"dueDate\": \"<dateTime>\",\n            \"isOverdue\": \"<boolean>\",\n            \"tagIds\": [\n              \"<uuid>\",\n              \"<uuid>\"\n            ],\n            \"sessionId\": \"<uuid>\",\n            \"monetaryAmount\": \"<double>\",\n            \"responsibleUserId\": \"<uuid>\",\n            \"responsibleUser\": {\n              \"id\": \"<uuid>\",\n              \"name\": \"<string>\"\n            },\n            \"contactIds\": [\n              \"<uuid>\",\n              \"<uuid>\"\n            ],\n            \"contacts\": [\n              {\n                \"id\": \"<uuid>\",\n                \"name\": \"<string>\"\n              },\n              {\n                \"id\": \"<uuid>\",\n                \"name\": \"<string>\"\n              }\n            ],\n            \"customFields\": {\n              \"key_0\": \"\"\n            },\n            \"metadata\": {\n              \"key_0\": \"\"\n            },\n            \"archived\": \"<boolean>\"\n          },\n          {\n            \"id\": \"<uuid>\",\n            \"createdAt\": \"<dateTime>\",\n            \"updatedAt\": \"<dateTime>\",\n            \"companyId\": \"<uuid>\",\n            \"panelId\": \"<uuid>\",\n            \"panelTitle\": \"<string>\",\n            \"stepId\": \"<uuid>\",\n            \"stepTitle\": \"<string>\",\n            \"stepPhase\": \"NONE\",\n            \"position\": \"<double>\",\n            \"title\": \"<string>\",\n            \"description\": \"<string>\",\n            \"key\": \"<string>\",\n            \"number\": \"<integer>\",\n            \"dueDate\": \"<dateTime>\",\n            \"isOverdue\": \"<boolean>\",\n            \"tagIds\": [\n              \"<uuid>\",\n              \"<uuid>\"\n            ],\n            \"sessionId\": \"<uuid>\",\n            \"monetaryAmount\": \"<double>\",\n            \"responsibleUserId\": \"<uuid>\",\n            \"responsibleUser\": {\n              \"id\": \"<uuid>\",\n              \"name\": \"<string>\"\n            },\n            \"contactIds\": [\n              \"<uuid>\",\n              \"<uuid>\"\n            ],\n            \"contacts\": [\n              {\n                \"id\": \"<uuid>\",\n                \"name\": \"<string>\"\n              },\n              {\n                \"id\": \"<uuid>\",\n                \"name\": \"<string>\"\n              }\n            ],\n            \"customFields\": {\n              \"key_0\": \"\",\n              \"key_1\": \"\"\n            },\n            \"metadata\": {\n              \"key_0\": \"\",\n              \"key_1\": \"\"\n            },\n            \"archived\": \"<boolean>\"\n          }\n        ],\n        \"totalItems\": \"<integer>\",\n        \"totalPages\": \"<integer>\",\n        \"hasMorePages\": \"<boolean>\"\n      }\n    }\n  ],\n  \"type\": \"SALES\",\n  \"autoLossDays\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c0333820-9de7-4666-ab49-d697ff21bec2",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Detalhes que devem ser incluídos na resposta.",
+                        "type": "text/plain"
+                      },
+                      "key": "IncludeDetails",
+                      "value": "StepsFields"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do painel.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51060d79-3dd5-4ccf-9b5e-5670d9c6afb5",
+          "name": "Campos personalizados",
+          "request": {
+            "name": "Campos personalizados",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "panel",
+                ":id",
+                "custom-fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Determina a estrutura da lista retornada. Se verdadeiro, os campos serão retornados de forma aninhada, isto é, estruturado em grupos.",
+                    "type": "text/plain"
+                  },
+                  "key": "NestedList",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do painel.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "9f5de3d4-0561-4373-9d45-6f69de3ededf",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    ":id",
+                    "custom-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina a estrutura da lista retornada. Se verdadeiro, os campos serão retornados de forma aninhada, isto é, estruturado em grupos.",
+                        "type": "text/plain"
+                      },
+                      "key": "NestedList",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do painel.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"parentId\": \"<uuid>\",\n    \"type\": \"STRING\",\n    \"entityType\": \"PANEL\",\n    \"scopeId\": \"<uuid>\",\n    \"companyId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"key\": \"<string>\",\n    \"position\": \"<integer>\",\n    \"required\": \"<boolean>\",\n    \"visible\": \"<boolean>\",\n    \"isValueRange\": \"<boolean>\",\n    \"options\": [\n      {\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"children\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/PublicCustomFieldDTO detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/PublicCustomFieldDTO detected>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"parentId\": \"<uuid>\",\n    \"type\": \"STRING\",\n    \"entityType\": \"CONTACT\",\n    \"scopeId\": \"<uuid>\",\n    \"companyId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"key\": \"<string>\",\n    \"position\": \"<integer>\",\n    \"required\": \"<boolean>\",\n    \"visible\": \"<boolean>\",\n    \"isValueRange\": \"<boolean>\",\n    \"options\": [\n      {\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"children\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/PublicCustomFieldDTO detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/PublicCustomFieldDTO detected>\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b96d86cd-95c6-4c62-949a-fdd782e45d7d",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    ":id",
+                    "custom-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina a estrutura da lista retornada. Se verdadeiro, os campos serão retornados de forma aninhada, isto é, estruturado em grupos.",
+                        "type": "text/plain"
+                      },
+                      "key": "NestedList",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do painel.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68032f58-9818-48e1-8598-86cc0b633ded",
+          "name": "Listar motivos de perda",
+          "request": {
+            "name": "Listar motivos de perda",
+            "description": {
+              "content": "Listagem paginada de motivos de perda do painel.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "panel",
+                ":id",
+                "lost-reason"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "CreatedAt.Before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "CreatedAt.After",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "UpdatedAt.Before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "UpdatedAt.After",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Número da página a ser obtida.",
+                    "type": "text/plain"
+                  },
+                  "key": "PageNumber",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Tamanho da página a ser obtida.",
+                    "type": "text/plain"
+                  },
+                  "key": "PageSize",
+                  "value": "15"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                    "type": "text/plain"
+                  },
+                  "key": "OrderBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                    "type": "text/plain"
+                  },
+                  "key": "OrderDirection",
+                  "value": "DESCENDING"
+                }
+              ],
+              "variable": [
+                {
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ID do painel do tipo Vendas.",
+                    "type": "text/plain"
+                  }
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "54174f55-c1d4-4822-9ec6-eebaef35b3d3",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    ":id",
+                    "lost-reason"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Número da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tamanho da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageSize",
+                      "value": "15"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderDirection",
+                      "value": "DESCENDING"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do painel do tipo Vendas.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pageNumber\": 1,\n  \"pageSize\": 15,\n  \"orderBy\": \"<string>\",\n  \"orderDirection\": \"ASCENDING\",\n  \"items\": [\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"panelId\": \"<uuid>\",\n      \"description\": \"<string>\"\n    }\n  ],\n  \"totalItems\": \"<integer>\",\n  \"totalPages\": \"<integer>\",\n  \"hasMorePages\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4c5b588a-53fe-4bca-977b-df1dcbf7c7c0",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "panel",
+                    ":id",
+                    "lost-reason"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Número da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tamanho da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageSize",
+                      "value": "15"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderDirection",
+                      "value": "DESCENDING"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID do painel do tipo Vendas.",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20c6ddfb-e928-4ff2-9345-1193f776b5c7",
+          "name": "Listar painéis",
+          "request": {
+            "name": "Listar painéis",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "panel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Filtro por título do painel.",
+                    "type": "text/plain"
+                  },
+                  "key": "Title",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Filtro por tipo do painel. (This can only be one of MANAGEMENT,SALES)",
+                    "type": "text/plain"
+                  },
+                  "key": "Type",
+                  "value": "MANAGEMENT"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Detalhes que devem ser incluídos na resposta.",
+                    "type": "text/plain"
+                  },
+                  "key": "IncludeDetails",
+                  "value": "StepsCardCount"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Detalhes que devem ser incluídos na resposta.",
+                    "type": "text/plain"
+                  },
+                  "key": "IncludeDetails",
+                  "value": "Steps"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "CreatedAt.Before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "CreatedAt.After",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "UpdatedAt.Before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                    "type": "text/plain"
+                  },
+                  "key": "UpdatedAt.After",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Número da página a ser obtida.",
+                    "type": "text/plain"
+                  },
+                  "key": "PageNumber",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Tamanho da página a ser obtida.",
+                    "type": "text/plain"
+                  },
+                  "key": "PageSize",
+                  "value": "15"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                    "type": "text/plain"
+                  },
+                  "key": "OrderBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                    "type": "text/plain"
+                  },
+                  "key": "OrderDirection",
+                  "value": "DESCENDING"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "4c4938e0-7e4e-4766-8273-8a4d5936b812",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por título do painel.",
+                        "type": "text/plain"
+                      },
+                      "key": "Title",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por tipo do painel. (This can only be one of MANAGEMENT,SALES)",
+                        "type": "text/plain"
+                      },
+                      "key": "Type",
+                      "value": "MANAGEMENT"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Detalhes que devem ser incluídos na resposta.",
+                        "type": "text/plain"
+                      },
+                      "key": "IncludeDetails",
+                      "value": "Steps"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Número da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tamanho da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageSize",
+                      "value": "15"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderDirection",
+                      "value": "DESCENDING"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pageNumber\": 1,\n  \"pageSize\": 15,\n  \"orderBy\": \"<string>\",\n  \"orderDirection\": \"DESCENDING\",\n  \"items\": [\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"archived\": \"<boolean>\",\n      \"scope\": \"USER\",\n      \"departmentIds\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"userId\": \"<uuid>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"thumbnailId\": \"<uuid>\",\n      \"thumbnailFile\": {\n        \"id\": \"<uuid>\",\n        \"companyId\": \"<uuid>\",\n        \"userId\": \"<uuid>\",\n        \"name\": \"<string>\",\n        \"extension\": \"<string>\",\n        \"mimeType\": \"<string>\",\n        \"type\": \"IMAGE\",\n        \"publicUrl\": \"<string>\",\n        \"publicUrlDownload\": \"<string>\",\n        \"size\": \"<long>\",\n        \"isThumbnail\": \"<boolean>\",\n        \"thumbnail\": {\n          \"id\": \"<uuid>\",\n          \"publicUrl\": \"<string>\"\n        }\n      },\n      \"key\": \"<string>\",\n      \"overdueCardCount\": \"<integer>\",\n      \"stepTitles\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        {\n          \"id\": \"<uuid>\",\n          \"createdAt\": \"<dateTime>\",\n          \"updatedAt\": \"<dateTime>\",\n          \"companyId\": \"<uuid>\",\n          \"panelId\": \"<uuid>\",\n          \"name\": \"<string>\",\n          \"nameColor\": \"<string>\",\n          \"bgColor\": \"<string>\"\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"createdAt\": \"<dateTime>\",\n          \"updatedAt\": \"<dateTime>\",\n          \"companyId\": \"<uuid>\",\n          \"panelId\": \"<uuid>\",\n          \"name\": \"<string>\",\n          \"nameColor\": \"<string>\",\n          \"bgColor\": \"<string>\"\n        }\n      ],\n      \"steps\": [\n        {\n          \"id\": \"<uuid>\",\n          \"createdAt\": \"<dateTime>\",\n          \"updatedAt\": \"<dateTime>\",\n          \"companyId\": \"<uuid>\",\n          \"panelId\": \"<uuid>\",\n          \"archived\": \"<boolean>\",\n          \"position\": \"<double>\",\n          \"title\": \"<string>\",\n          \"isInitial\": \"<boolean>\",\n          \"isFinal\": \"<boolean>\",\n          \"cardCount\": \"<integer>\",\n          \"overdueCardCount\": \"<integer>\",\n          \"monetaryAmount\": \"<double>\",\n          \"fields\": [\n            {\n              \"key\": \"<string>\",\n              \"type\": \"CUSTOM_FIELD\",\n              \"position\": \"<integer>\",\n              \"visible\": \"<boolean>\"\n            },\n            {\n              \"key\": \"<string>\",\n              \"type\": \"CUSTOM_FIELD\",\n              \"position\": \"<integer>\",\n              \"visible\": \"<boolean>\"\n            }\n          ],\n          \"cards\": {\n            \"pageNumber\": 1,\n            \"pageSize\": 15,\n            \"orderBy\": \"<string>\",\n            \"orderDirection\": \"DESCENDING\",\n            \"items\": [\n              {\n                \"id\": \"<uuid>\",\n                \"createdAt\": \"<dateTime>\",\n                \"updatedAt\": \"<dateTime>\",\n                \"companyId\": \"<uuid>\",\n                \"panelId\": \"<uuid>\",\n                \"panelTitle\": \"<string>\",\n                \"stepId\": \"<uuid>\",\n                \"stepTitle\": \"<string>\",\n                \"stepPhase\": \"NONE\",\n                \"position\": \"<double>\",\n                \"title\": \"<string>\",\n                \"description\": \"<string>\",\n                \"key\": \"<string>\",\n                \"number\": \"<integer>\",\n                \"dueDate\": \"<dateTime>\",\n                \"isOverdue\": \"<boolean>\",\n                \"tagIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"sessionId\": \"<uuid>\",\n                \"monetaryAmount\": \"<double>\",\n                \"responsibleUserId\": \"<uuid>\",\n                \"responsibleUser\": {\n                  \"id\": \"<uuid>\",\n                  \"name\": \"<string>\"\n                },\n                \"contactIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"contacts\": [\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  },\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  }\n                ],\n                \"customFields\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\"\n                },\n                \"metadata\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\",\n                  \"key_2\": \"\"\n                },\n                \"archived\": \"<boolean>\"\n              },\n              {\n                \"id\": \"<uuid>\",\n                \"createdAt\": \"<dateTime>\",\n                \"updatedAt\": \"<dateTime>\",\n                \"companyId\": \"<uuid>\",\n                \"panelId\": \"<uuid>\",\n                \"panelTitle\": \"<string>\",\n                \"stepId\": \"<uuid>\",\n                \"stepTitle\": \"<string>\",\n                \"stepPhase\": \"INITIAL\",\n                \"position\": \"<double>\",\n                \"title\": \"<string>\",\n                \"description\": \"<string>\",\n                \"key\": \"<string>\",\n                \"number\": \"<integer>\",\n                \"dueDate\": \"<dateTime>\",\n                \"isOverdue\": \"<boolean>\",\n                \"tagIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"sessionId\": \"<uuid>\",\n                \"monetaryAmount\": \"<double>\",\n                \"responsibleUserId\": \"<uuid>\",\n                \"responsibleUser\": {\n                  \"id\": \"<uuid>\",\n                  \"name\": \"<string>\"\n                },\n                \"contactIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"contacts\": [\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  },\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  }\n                ],\n                \"customFields\": {\n                  \"key_0\": \"\"\n                },\n                \"metadata\": {\n                  \"key_0\": \"\"\n                },\n                \"archived\": \"<boolean>\"\n              }\n            ],\n            \"totalItems\": \"<integer>\",\n            \"totalPages\": \"<integer>\",\n            \"hasMorePages\": \"<boolean>\"\n          }\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"createdAt\": \"<dateTime>\",\n          \"updatedAt\": \"<dateTime>\",\n          \"companyId\": \"<uuid>\",\n          \"panelId\": \"<uuid>\",\n          \"archived\": \"<boolean>\",\n          \"position\": \"<double>\",\n          \"title\": \"<string>\",\n          \"isInitial\": \"<boolean>\",\n          \"isFinal\": \"<boolean>\",\n          \"cardCount\": \"<integer>\",\n          \"overdueCardCount\": \"<integer>\",\n          \"monetaryAmount\": \"<double>\",\n          \"fields\": [\n            {\n              \"key\": \"<string>\",\n              \"type\": \"DEFAULT_FIELD\",\n              \"position\": \"<integer>\",\n              \"visible\": \"<boolean>\"\n            },\n            {\n              \"key\": \"<string>\",\n              \"type\": \"DEFAULT_FIELD\",\n              \"position\": \"<integer>\",\n              \"visible\": \"<boolean>\"\n            }\n          ],\n          \"cards\": {\n            \"pageNumber\": 1,\n            \"pageSize\": 15,\n            \"orderBy\": \"<string>\",\n            \"orderDirection\": \"DESCENDING\",\n            \"items\": [\n              {\n                \"id\": \"<uuid>\",\n                \"createdAt\": \"<dateTime>\",\n                \"updatedAt\": \"<dateTime>\",\n                \"companyId\": \"<uuid>\",\n                \"panelId\": \"<uuid>\",\n                \"panelTitle\": \"<string>\",\n                \"stepId\": \"<uuid>\",\n                \"stepTitle\": \"<string>\",\n                \"stepPhase\": \"INITIAL\",\n                \"position\": \"<double>\",\n                \"title\": \"<string>\",\n                \"description\": \"<string>\",\n                \"key\": \"<string>\",\n                \"number\": \"<integer>\",\n                \"dueDate\": \"<dateTime>\",\n                \"isOverdue\": \"<boolean>\",\n                \"tagIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"sessionId\": \"<uuid>\",\n                \"monetaryAmount\": \"<double>\",\n                \"responsibleUserId\": \"<uuid>\",\n                \"responsibleUser\": {\n                  \"id\": \"<uuid>\",\n                  \"name\": \"<string>\"\n                },\n                \"contactIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"contacts\": [\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  },\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  }\n                ],\n                \"customFields\": {\n                  \"key_0\": \"\"\n                },\n                \"metadata\": {\n                  \"key_0\": \"\"\n                },\n                \"archived\": \"<boolean>\"\n              },\n              {\n                \"id\": \"<uuid>\",\n                \"createdAt\": \"<dateTime>\",\n                \"updatedAt\": \"<dateTime>\",\n                \"companyId\": \"<uuid>\",\n                \"panelId\": \"<uuid>\",\n                \"panelTitle\": \"<string>\",\n                \"stepId\": \"<uuid>\",\n                \"stepTitle\": \"<string>\",\n                \"stepPhase\": \"FINAL\",\n                \"position\": \"<double>\",\n                \"title\": \"<string>\",\n                \"description\": \"<string>\",\n                \"key\": \"<string>\",\n                \"number\": \"<integer>\",\n                \"dueDate\": \"<dateTime>\",\n                \"isOverdue\": \"<boolean>\",\n                \"tagIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"sessionId\": \"<uuid>\",\n                \"monetaryAmount\": \"<double>\",\n                \"responsibleUserId\": \"<uuid>\",\n                \"responsibleUser\": {\n                  \"id\": \"<uuid>\",\n                  \"name\": \"<string>\"\n                },\n                \"contactIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"contacts\": [\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  },\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  }\n                ],\n                \"customFields\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\"\n                },\n                \"metadata\": {\n                  \"key_0\": \"\"\n                },\n                \"archived\": \"<boolean>\"\n              }\n            ],\n            \"totalItems\": \"<integer>\",\n            \"totalPages\": \"<integer>\",\n            \"hasMorePages\": \"<boolean>\"\n          }\n        }\n      ],\n      \"type\": \"SALES\",\n      \"autoLossDays\": \"<integer>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"companyId\": \"<uuid>\",\n      \"archived\": \"<boolean>\",\n      \"scope\": \"USER\",\n      \"departmentIds\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"userId\": \"<uuid>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"thumbnailId\": \"<uuid>\",\n      \"thumbnailFile\": {\n        \"id\": \"<uuid>\",\n        \"companyId\": \"<uuid>\",\n        \"userId\": \"<uuid>\",\n        \"name\": \"<string>\",\n        \"extension\": \"<string>\",\n        \"mimeType\": \"<string>\",\n        \"type\": \"PDF\",\n        \"publicUrl\": \"<string>\",\n        \"publicUrlDownload\": \"<string>\",\n        \"size\": \"<long>\",\n        \"isThumbnail\": \"<boolean>\",\n        \"thumbnail\": {\n          \"id\": \"<uuid>\",\n          \"publicUrl\": \"<string>\"\n        }\n      },\n      \"key\": \"<string>\",\n      \"overdueCardCount\": \"<integer>\",\n      \"stepTitles\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        {\n          \"id\": \"<uuid>\",\n          \"createdAt\": \"<dateTime>\",\n          \"updatedAt\": \"<dateTime>\",\n          \"companyId\": \"<uuid>\",\n          \"panelId\": \"<uuid>\",\n          \"name\": \"<string>\",\n          \"nameColor\": \"<string>\",\n          \"bgColor\": \"<string>\"\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"createdAt\": \"<dateTime>\",\n          \"updatedAt\": \"<dateTime>\",\n          \"companyId\": \"<uuid>\",\n          \"panelId\": \"<uuid>\",\n          \"name\": \"<string>\",\n          \"nameColor\": \"<string>\",\n          \"bgColor\": \"<string>\"\n        }\n      ],\n      \"steps\": [\n        {\n          \"id\": \"<uuid>\",\n          \"createdAt\": \"<dateTime>\",\n          \"updatedAt\": \"<dateTime>\",\n          \"companyId\": \"<uuid>\",\n          \"panelId\": \"<uuid>\",\n          \"archived\": \"<boolean>\",\n          \"position\": \"<double>\",\n          \"title\": \"<string>\",\n          \"isInitial\": \"<boolean>\",\n          \"isFinal\": \"<boolean>\",\n          \"cardCount\": \"<integer>\",\n          \"overdueCardCount\": \"<integer>\",\n          \"monetaryAmount\": \"<double>\",\n          \"fields\": [\n            {\n              \"key\": \"<string>\",\n              \"type\": \"DEFAULT_FIELD\",\n              \"position\": \"<integer>\",\n              \"visible\": \"<boolean>\"\n            },\n            {\n              \"key\": \"<string>\",\n              \"type\": \"CUSTOM_FIELD\",\n              \"position\": \"<integer>\",\n              \"visible\": \"<boolean>\"\n            }\n          ],\n          \"cards\": {\n            \"pageNumber\": 1,\n            \"pageSize\": 15,\n            \"orderBy\": \"<string>\",\n            \"orderDirection\": \"DESCENDING\",\n            \"items\": [\n              {\n                \"id\": \"<uuid>\",\n                \"createdAt\": \"<dateTime>\",\n                \"updatedAt\": \"<dateTime>\",\n                \"companyId\": \"<uuid>\",\n                \"panelId\": \"<uuid>\",\n                \"panelTitle\": \"<string>\",\n                \"stepId\": \"<uuid>\",\n                \"stepTitle\": \"<string>\",\n                \"stepPhase\": \"INITIAL\",\n                \"position\": \"<double>\",\n                \"title\": \"<string>\",\n                \"description\": \"<string>\",\n                \"key\": \"<string>\",\n                \"number\": \"<integer>\",\n                \"dueDate\": \"<dateTime>\",\n                \"isOverdue\": \"<boolean>\",\n                \"tagIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"sessionId\": \"<uuid>\",\n                \"monetaryAmount\": \"<double>\",\n                \"responsibleUserId\": \"<uuid>\",\n                \"responsibleUser\": {\n                  \"id\": \"<uuid>\",\n                  \"name\": \"<string>\"\n                },\n                \"contactIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"contacts\": [\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  },\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  }\n                ],\n                \"customFields\": {\n                  \"key_0\": \"\"\n                },\n                \"metadata\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\",\n                  \"key_2\": \"\",\n                  \"key_3\": \"\"\n                },\n                \"archived\": \"<boolean>\"\n              },\n              {\n                \"id\": \"<uuid>\",\n                \"createdAt\": \"<dateTime>\",\n                \"updatedAt\": \"<dateTime>\",\n                \"companyId\": \"<uuid>\",\n                \"panelId\": \"<uuid>\",\n                \"panelTitle\": \"<string>\",\n                \"stepId\": \"<uuid>\",\n                \"stepTitle\": \"<string>\",\n                \"stepPhase\": \"NONE\",\n                \"position\": \"<double>\",\n                \"title\": \"<string>\",\n                \"description\": \"<string>\",\n                \"key\": \"<string>\",\n                \"number\": \"<integer>\",\n                \"dueDate\": \"<dateTime>\",\n                \"isOverdue\": \"<boolean>\",\n                \"tagIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"sessionId\": \"<uuid>\",\n                \"monetaryAmount\": \"<double>\",\n                \"responsibleUserId\": \"<uuid>\",\n                \"responsibleUser\": {\n                  \"id\": \"<uuid>\",\n                  \"name\": \"<string>\"\n                },\n                \"contactIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"contacts\": [\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  },\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  }\n                ],\n                \"customFields\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\"\n                },\n                \"metadata\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\"\n                },\n                \"archived\": \"<boolean>\"\n              }\n            ],\n            \"totalItems\": \"<integer>\",\n            \"totalPages\": \"<integer>\",\n            \"hasMorePages\": \"<boolean>\"\n          }\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"createdAt\": \"<dateTime>\",\n          \"updatedAt\": \"<dateTime>\",\n          \"companyId\": \"<uuid>\",\n          \"panelId\": \"<uuid>\",\n          \"archived\": \"<boolean>\",\n          \"position\": \"<double>\",\n          \"title\": \"<string>\",\n          \"isInitial\": \"<boolean>\",\n          \"isFinal\": \"<boolean>\",\n          \"cardCount\": \"<integer>\",\n          \"overdueCardCount\": \"<integer>\",\n          \"monetaryAmount\": \"<double>\",\n          \"fields\": [\n            {\n              \"key\": \"<string>\",\n              \"type\": \"DEFAULT_FIELD\",\n              \"position\": \"<integer>\",\n              \"visible\": \"<boolean>\"\n            },\n            {\n              \"key\": \"<string>\",\n              \"type\": \"CUSTOM_FIELD\",\n              \"position\": \"<integer>\",\n              \"visible\": \"<boolean>\"\n            }\n          ],\n          \"cards\": {\n            \"pageNumber\": 1,\n            \"pageSize\": 15,\n            \"orderBy\": \"<string>\",\n            \"orderDirection\": \"DESCENDING\",\n            \"items\": [\n              {\n                \"id\": \"<uuid>\",\n                \"createdAt\": \"<dateTime>\",\n                \"updatedAt\": \"<dateTime>\",\n                \"companyId\": \"<uuid>\",\n                \"panelId\": \"<uuid>\",\n                \"panelTitle\": \"<string>\",\n                \"stepId\": \"<uuid>\",\n                \"stepTitle\": \"<string>\",\n                \"stepPhase\": \"FINAL\",\n                \"position\": \"<double>\",\n                \"title\": \"<string>\",\n                \"description\": \"<string>\",\n                \"key\": \"<string>\",\n                \"number\": \"<integer>\",\n                \"dueDate\": \"<dateTime>\",\n                \"isOverdue\": \"<boolean>\",\n                \"tagIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"sessionId\": \"<uuid>\",\n                \"monetaryAmount\": \"<double>\",\n                \"responsibleUserId\": \"<uuid>\",\n                \"responsibleUser\": {\n                  \"id\": \"<uuid>\",\n                  \"name\": \"<string>\"\n                },\n                \"contactIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"contacts\": [\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  },\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  }\n                ],\n                \"customFields\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\"\n                },\n                \"metadata\": {\n                  \"key_0\": \"\"\n                },\n                \"archived\": \"<boolean>\"\n              },\n              {\n                \"id\": \"<uuid>\",\n                \"createdAt\": \"<dateTime>\",\n                \"updatedAt\": \"<dateTime>\",\n                \"companyId\": \"<uuid>\",\n                \"panelId\": \"<uuid>\",\n                \"panelTitle\": \"<string>\",\n                \"stepId\": \"<uuid>\",\n                \"stepTitle\": \"<string>\",\n                \"stepPhase\": \"FINAL\",\n                \"position\": \"<double>\",\n                \"title\": \"<string>\",\n                \"description\": \"<string>\",\n                \"key\": \"<string>\",\n                \"number\": \"<integer>\",\n                \"dueDate\": \"<dateTime>\",\n                \"isOverdue\": \"<boolean>\",\n                \"tagIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"sessionId\": \"<uuid>\",\n                \"monetaryAmount\": \"<double>\",\n                \"responsibleUserId\": \"<uuid>\",\n                \"responsibleUser\": {\n                  \"id\": \"<uuid>\",\n                  \"name\": \"<string>\"\n                },\n                \"contactIds\": [\n                  \"<uuid>\",\n                  \"<uuid>\"\n                ],\n                \"contacts\": [\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  },\n                  {\n                    \"id\": \"<uuid>\",\n                    \"name\": \"<string>\"\n                  }\n                ],\n                \"customFields\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\",\n                  \"key_2\": \"\",\n                  \"key_3\": \"\"\n                },\n                \"metadata\": {\n                  \"key_0\": \"\",\n                  \"key_1\": \"\",\n                  \"key_2\": \"\"\n                },\n                \"archived\": \"<boolean>\"\n              }\n            ],\n            \"totalItems\": \"<integer>\",\n            \"totalPages\": \"<integer>\",\n            \"hasMorePages\": \"<boolean>\"\n          }\n        }\n      ],\n      \"type\": \"MANAGEMENT\",\n      \"autoLossDays\": \"<integer>\"\n    }\n  ],\n  \"totalItems\": \"<integer>\",\n  \"totalPages\": \"<integer>\",\n  \"hasMorePages\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "563bc13e-b82b-4374-ad95-0b76d01fbd5d",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "panel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por título do painel.",
+                        "type": "text/plain"
+                      },
+                      "key": "Title",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filtro por tipo do painel. (This can only be one of MANAGEMENT,SALES)",
+                        "type": "text/plain"
+                      },
+                      "key": "Type",
+                      "value": "MANAGEMENT"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Detalhes que devem ser incluídos na resposta.",
+                        "type": "text/plain"
+                      },
+                      "key": "IncludeDetails",
+                      "value": "Steps"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "CreatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite superior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.Before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Limite inferior de busca, sempre em fuso horário UTM.",
+                        "type": "text/plain"
+                      },
+                      "key": "UpdatedAt.After",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Número da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tamanho da página a ser obtida.",
+                        "type": "text/plain"
+                      },
+                      "key": "PageSize",
+                      "value": "15"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Nome do campo para ser utilizado como pivô da ordenação.",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Determina se a ordenação deve ser crescente ou decrescente. (This can only be one of ASCENDING,DESCENDING)",
+                        "type": "text/plain"
+                      },
+                      "key": "OrderDirection",
+                      "value": "DESCENDING"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"key\": \"<string>\",\n  \"text\": \"<string>\",\n  \"isUnsolvableError\": \"<boolean>\",\n  \"details\": \"\",\n  \"id\": {\n    \"value\": \"<string>\",\n    \"shortValue\": \"<string>\"\n  },\n  \"httpStatusCode\": \"PaymentRequired\",\n  \"version\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.wts.chat/crm"
+    },
+    {
+      "key": "token",
+      "value": "pn_SEU_TOKEN_AQUI",
+      "type": "string"
+    }
+  ],
+  "info": {
+    "_postman_id": "5ed8ca62-9f57-450a-b273-72fc49cd628a",
+    "name": "Crm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  }
+}

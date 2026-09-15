@@ -1,0 +1,1302 @@
+{
+  "source": "https://flwchat.readme.io/llms.txt",
+  "operations": [
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/channel",
+      "full_path": "/chat/v1/channel",
+      "summary": "Listar",
+      "tags": [
+        "Canais de Atendimento"
+      ],
+      "page": "get_v1-channel"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/chatbot",
+      "full_path": "/chat/v1/chatbot",
+      "summary": "Listar",
+      "tags": [
+        "Chatbots"
+      ],
+      "page": "get_v1-chatbot"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/chatbot/send",
+      "full_path": "/chat/v1/chatbot/send",
+      "summary": "Enviar chatbot",
+      "tags": [
+        "Chatbots"
+      ],
+      "page": "post_v1-chatbot-send"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/message",
+      "full_path": "/chat/v1/message",
+      "summary": "Listar",
+      "tags": [
+        "Mensagens"
+      ],
+      "page": "get_v1-message"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/message/send",
+      "full_path": "/chat/v1/message/send",
+      "summary": "Enviar",
+      "tags": [
+        "Mensagens"
+      ],
+      "page": "post_v1-message-send"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/message/send-sync",
+      "full_path": "/chat/v1/message/send-sync",
+      "summary": "Enviar síncrono",
+      "tags": [
+        "Mensagens"
+      ],
+      "page": "post_v1-message-send-sync"
+    },
+    {
+      "service": "chat",
+      "method": "DELETE",
+      "path": "/v1/message/{id}",
+      "full_path": "/chat/v1/message/{id}",
+      "summary": "Excluir mensagem",
+      "tags": [
+        "Mensagens"
+      ],
+      "page": "delete_v1-message-id"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/message/{id}",
+      "full_path": "/chat/v1/message/{id}",
+      "summary": "Obter por ID",
+      "tags": [
+        "Mensagens"
+      ],
+      "page": "get_v1-message-id"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/message/{id}/status",
+      "full_path": "/chat/v1/message/{id}/status",
+      "summary": "Obter status por ID",
+      "tags": [
+        "Mensagens"
+      ],
+      "page": "get_v1-message-id-status"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/scheduled-message",
+      "full_path": "/chat/v1/scheduled-message",
+      "summary": "Listar",
+      "tags": [
+        "Mensagens Agendadas"
+      ],
+      "page": "get_v1-scheduled-message"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/scheduled-message",
+      "full_path": "/chat/v1/scheduled-message",
+      "summary": "Criar",
+      "tags": [
+        "Mensagens Agendadas"
+      ],
+      "page": "post_v1-scheduled-message"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/scheduled-message/batch-cancel",
+      "full_path": "/chat/v1/scheduled-message/batch-cancel",
+      "summary": "Cancelar em massa",
+      "tags": [
+        "Mensagens Agendadas"
+      ],
+      "page": "post_v1-scheduled-message-batch-cancel"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/scheduled-message/{id}",
+      "full_path": "/chat/v1/scheduled-message/{id}",
+      "summary": "Obter por ID",
+      "tags": [
+        "Mensagens Agendadas"
+      ],
+      "page": "get_v1-scheduled-message-id"
+    },
+    {
+      "service": "chat",
+      "method": "PUT",
+      "path": "/v1/scheduled-message/{id}",
+      "full_path": "/chat/v1/scheduled-message/{id}",
+      "summary": "Atualizar",
+      "tags": [
+        "Mensagens Agendadas"
+      ],
+      "page": "put_v1-scheduled-message-id"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/scheduled-message/{id}/cancel",
+      "full_path": "/chat/v1/scheduled-message/{id}/cancel",
+      "summary": "Cancelar",
+      "tags": [
+        "Mensagens Agendadas"
+      ],
+      "page": "post_v1-scheduled-message-id-cancel"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/audio",
+      "full_path": "/chat/v1/send/audio",
+      "summary": "Áudio",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-audio"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/chatbot",
+      "full_path": "/chat/v1/send/chatbot",
+      "summary": "Chatbot",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-chatbot"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/chatbot/batch",
+      "full_path": "/chat/v1/send/chatbot/batch",
+      "summary": "Chatbot (em lote)",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-chatbot-batch"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/send/chatbot/{id}",
+      "full_path": "/chat/v1/send/chatbot/{id}",
+      "summary": "Chatbot status",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "get_v1-send-chatbot-id"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/document",
+      "full_path": "/chat/v1/send/document",
+      "summary": "Documento",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-document"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/image",
+      "full_path": "/chat/v1/send/image",
+      "summary": "Imagem",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-image"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/send/message/{id}",
+      "full_path": "/chat/v1/send/message/{id}",
+      "summary": "Mensagem status",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "get_v1-send-message-id"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/otp",
+      "full_path": "/chat/v1/send/otp",
+      "summary": "OTP",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-otp"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/send/otp/{id}",
+      "full_path": "/chat/v1/send/otp/{id}",
+      "summary": "OTP status",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "get_v1-send-otp-id"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/template",
+      "full_path": "/chat/v1/send/template",
+      "summary": "Modelo",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-template"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/template/batch",
+      "full_path": "/chat/v1/send/template/batch",
+      "summary": "Modelo (em lote)",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-template-batch"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/text",
+      "full_path": "/chat/v1/send/text",
+      "summary": "Texto",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-text"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/typing",
+      "full_path": "/chat/v1/send/typing",
+      "summary": "Digitando",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-typing"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/send/video",
+      "full_path": "/chat/v1/send/video",
+      "summary": "Vídeo",
+      "tags": [
+        "Envios (Msg/Otp/Bot)"
+      ],
+      "page": "post_v1-send-video"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/sequence",
+      "full_path": "/chat/v1/sequence",
+      "summary": "Listar",
+      "tags": [
+        "Sequências"
+      ],
+      "page": "get_v1-sequence"
+    },
+    {
+      "service": "chat",
+      "method": "DELETE",
+      "path": "/v1/sequence/{id}/contact",
+      "full_path": "/chat/v1/sequence/{id}/contact",
+      "summary": "Remover contato",
+      "tags": [
+        "Sequências"
+      ],
+      "page": "delete_v1-sequence-id-contact"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/sequence/{id}/contact",
+      "full_path": "/chat/v1/sequence/{id}/contact",
+      "summary": "Adicionar contato",
+      "tags": [
+        "Sequências"
+      ],
+      "page": "post_v1-sequence-id-contact"
+    },
+    {
+      "service": "chat",
+      "method": "DELETE",
+      "path": "/v1/sequence/{id}/contact/batch",
+      "full_path": "/chat/v1/sequence/{id}/contact/batch",
+      "summary": "Remover contatos",
+      "tags": [
+        "Sequências"
+      ],
+      "page": "delete_v1-sequence-id-contact-batch"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/sequence/{id}/contact/batch",
+      "full_path": "/chat/v1/sequence/{id}/contact/batch",
+      "summary": "Adicionar contatos",
+      "tags": [
+        "Sequências"
+      ],
+      "page": "post_v1-sequence-id-contact-batch"
+    },
+    {
+      "service": "chat",
+      "method": "DELETE",
+      "path": "/v1/session/note/{id}",
+      "full_path": "/chat/v1/session/note/{id}",
+      "summary": "Excluir uma nota interna",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "delete_v1-session-note-id"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/session/note/{id}",
+      "full_path": "/chat/v1/session/note/{id}",
+      "summary": "Obter uma nota interna",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "get_v1-session-note-id"
+    },
+    {
+      "service": "chat",
+      "method": "PUT",
+      "path": "/v1/session/{id}/assignee",
+      "full_path": "/chat/v1/session/{id}/assignee",
+      "summary": "Atribuir usuário",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "put_v1-session-id-assignee"
+    },
+    {
+      "service": "chat",
+      "method": "PUT",
+      "path": "/v1/session/{id}/complete",
+      "full_path": "/chat/v1/session/{id}/complete",
+      "summary": "Concluir",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "put_v1-session-id-complete"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/session/{id}/message",
+      "full_path": "/chat/v1/session/{id}/message",
+      "summary": "Listar mensagens",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "get_v1-session-id-message"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/session/{id}/message",
+      "full_path": "/chat/v1/session/{id}/message",
+      "summary": "Enviar mensagem",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "post_v1-session-id-message"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/session/{id}/message/sync",
+      "full_path": "/chat/v1/session/{id}/message/sync",
+      "summary": "Enviar mensagem síncrona",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "post_v1-session-id-message-sync"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/session/{id}/note",
+      "full_path": "/chat/v1/session/{id}/note",
+      "summary": "Listar notas internas",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "get_v1-session-id-note"
+    },
+    {
+      "service": "chat",
+      "method": "POST",
+      "path": "/v1/session/{id}/note",
+      "full_path": "/chat/v1/session/{id}/note",
+      "summary": "Salvar nota interna",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "post_v1-session-id-note"
+    },
+    {
+      "service": "chat",
+      "method": "PUT",
+      "path": "/v1/session/{id}/status",
+      "full_path": "/chat/v1/session/{id}/status",
+      "summary": "Alterar status",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "put_v1-session-id-status"
+    },
+    {
+      "service": "chat",
+      "method": "PUT",
+      "path": "/v1/session/{id}/transfer",
+      "full_path": "/chat/v1/session/{id}/transfer",
+      "summary": "Transferir",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "put_v1-session-id-transfer"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v1/template",
+      "full_path": "/chat/v1/template",
+      "summary": "Listar",
+      "tags": [
+        "Modelos de Mensagem"
+      ],
+      "page": "get_v1-template"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v2/sequence/{id}/contact",
+      "full_path": "/chat/v2/sequence/{id}/contact",
+      "summary": "Listar contatos",
+      "tags": [
+        "Sequências"
+      ],
+      "page": "get_v2-sequence-id-contact"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v2/session",
+      "full_path": "/chat/v2/session",
+      "summary": "Listar",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "get_v2-session"
+    },
+    {
+      "service": "chat",
+      "method": "GET",
+      "path": "/v2/session/{id}",
+      "full_path": "/chat/v2/session/{id}",
+      "summary": "Obter por ID",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "get_v2-session-id"
+    },
+    {
+      "service": "chat",
+      "method": "PUT",
+      "path": "/v2/session/{id}/partial",
+      "full_path": "/chat/v2/session/{id}/partial",
+      "summary": "Alterar",
+      "tags": [
+        "Conversas"
+      ],
+      "page": "put_v2-session-id-partial"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/agent",
+      "full_path": "/core/v1/agent",
+      "summary": "Listar",
+      "tags": [
+        "Usuários"
+      ],
+      "page": "get_v1-agent"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/agent",
+      "full_path": "/core/v1/agent",
+      "summary": "Criar",
+      "tags": [
+        "Usuários"
+      ],
+      "page": "post_v1-agent"
+    },
+    {
+      "service": "core",
+      "method": "DELETE",
+      "path": "/v1/agent/{id}",
+      "full_path": "/core/v1/agent/{id}",
+      "summary": "Excluir",
+      "tags": [
+        "Usuários"
+      ],
+      "page": "delete_v1-agent-id"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/agent/{id}",
+      "full_path": "/core/v1/agent/{id}",
+      "summary": "Obter por ID",
+      "tags": [
+        "Usuários"
+      ],
+      "page": "get_v1-agent-id"
+    },
+    {
+      "service": "core",
+      "method": "PUT",
+      "path": "/v1/agent/{id}",
+      "full_path": "/core/v1/agent/{id}",
+      "summary": "Atualizar",
+      "tags": [
+        "Usuários"
+      ],
+      "page": "put_v1-agent-id"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/agent/{id}/departments",
+      "full_path": "/core/v1/agent/{id}/departments",
+      "summary": "Atualizar equipes",
+      "tags": [
+        "Usuários"
+      ],
+      "page": "post_v1-agent-id-departments"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/agent/{id}/logout",
+      "full_path": "/core/v1/agent/{id}/logout",
+      "summary": "Fazer logout",
+      "tags": [
+        "Usuários"
+      ],
+      "page": "post_v1-agent-id-logout"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/agent/{id}/status",
+      "full_path": "/core/v1/agent/{id}/status",
+      "summary": "Alterar status",
+      "tags": [
+        "Usuários"
+      ],
+      "page": "post_v1-agent-id-status"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/company/officehours",
+      "full_path": "/core/v1/company/officehours",
+      "summary": "Obter",
+      "tags": [
+        "Horários de Atendimento"
+      ],
+      "page": "get_v1-company-officehours"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/contact",
+      "full_path": "/core/v1/contact",
+      "summary": "Listar",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "get_v1-contact"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/contact",
+      "full_path": "/core/v1/contact",
+      "summary": "Criar",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "post_v1-contact"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/contact/custom-field",
+      "full_path": "/core/v1/contact/custom-field",
+      "summary": "Campos personalizados",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "get_v1-contact-custom-field"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/contact/filter",
+      "full_path": "/core/v1/contact/filter",
+      "summary": "Filtrar",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "post_v1-contact-filter"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/contact/phonenumber/{phone}",
+      "full_path": "/core/v1/contact/phonenumber/{phone}",
+      "summary": "Obter por Número de telefone",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "get_v1-contact-phonenumber-phone"
+    },
+    {
+      "service": "core",
+      "method": "PUT",
+      "path": "/v1/contact/phonenumber/{phone}",
+      "full_path": "/core/v1/contact/phonenumber/{phone}",
+      "summary": "Atualizar por Número de telefone",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "put_v1-contact-phonenumber-phone"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/contact/phonenumber/{phone}/tags",
+      "full_path": "/core/v1/contact/phonenumber/{phone}/tags",
+      "summary": "Atualizar etiquetas por Número de telefone",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "post_v1-contact-phonenumber-phone-tags"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/contact/{id}",
+      "full_path": "/core/v1/contact/{id}",
+      "summary": "Obter por ID",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "get_v1-contact-id"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/contact/{id}/tags",
+      "full_path": "/core/v1/contact/{id}/tags",
+      "summary": "Atualizar etiquetas",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "post_v1-contact-id-tags"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/custom-field",
+      "full_path": "/core/v1/custom-field",
+      "summary": "Listar",
+      "tags": [
+        "Campos"
+      ],
+      "page": "get_v1-custom-field"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/department",
+      "full_path": "/core/v1/department",
+      "summary": "Criar",
+      "tags": [
+        "Equipes"
+      ],
+      "page": "post_v1-department"
+    },
+    {
+      "service": "core",
+      "method": "DELETE",
+      "path": "/v1/department/{id}",
+      "full_path": "/core/v1/department/{id}",
+      "summary": "Excluir",
+      "tags": [
+        "Equipes"
+      ],
+      "page": "delete_v1-department-id"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/department/{id}",
+      "full_path": "/core/v1/department/{id}",
+      "summary": "Obter por ID",
+      "tags": [
+        "Equipes"
+      ],
+      "page": "get_v1-department-id"
+    },
+    {
+      "service": "core",
+      "method": "PUT",
+      "path": "/v1/department/{id}",
+      "full_path": "/core/v1/department/{id}",
+      "summary": "Atualizar",
+      "tags": [
+        "Equipes"
+      ],
+      "page": "put_v1-department-id"
+    },
+    {
+      "service": "core",
+      "method": "PUT",
+      "path": "/v1/department/{id}/agents",
+      "full_path": "/core/v1/department/{id}/agents",
+      "summary": "Atualizar usuários",
+      "tags": [
+        "Equipes"
+      ],
+      "page": "put_v1-department-id-agents"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/department/{id}/channel",
+      "full_path": "/core/v1/department/{id}/channel",
+      "summary": "Listar canais",
+      "tags": [
+        "Equipes"
+      ],
+      "page": "get_v1-department-id-channel"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/portfolio",
+      "full_path": "/core/v1/portfolio",
+      "summary": "Listar",
+      "tags": [
+        "Carteiras"
+      ],
+      "page": "get_v1-portfolio"
+    },
+    {
+      "service": "core",
+      "method": "DELETE",
+      "path": "/v1/portfolio/{id}/contact",
+      "full_path": "/core/v1/portfolio/{id}/contact",
+      "summary": "Remover contato",
+      "tags": [
+        "Carteiras"
+      ],
+      "page": "delete_v1-portfolio-id-contact"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/portfolio/{id}/contact",
+      "full_path": "/core/v1/portfolio/{id}/contact",
+      "summary": "Listar contatos",
+      "tags": [
+        "Carteiras"
+      ],
+      "page": "get_v1-portfolio-id-contact"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/portfolio/{id}/contact",
+      "full_path": "/core/v1/portfolio/{id}/contact",
+      "summary": "Adicionar contato",
+      "tags": [
+        "Carteiras"
+      ],
+      "page": "post_v1-portfolio-id-contact"
+    },
+    {
+      "service": "core",
+      "method": "DELETE",
+      "path": "/v1/portfolio/{id}/contact/batch",
+      "full_path": "/core/v1/portfolio/{id}/contact/batch",
+      "summary": "Remover contatos",
+      "tags": [
+        "Carteiras"
+      ],
+      "page": "delete_v1-portfolio-id-contact-batch"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/portfolio/{id}/contact/batch",
+      "full_path": "/core/v1/portfolio/{id}/contact/batch",
+      "summary": "Adicionar contatos",
+      "tags": [
+        "Carteiras"
+      ],
+      "page": "post_v1-portfolio-id-contact-batch"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/tag",
+      "full_path": "/core/v1/tag",
+      "summary": "Listar",
+      "tags": [
+        "Etiquetas"
+      ],
+      "page": "get_v1-tag"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/tag",
+      "full_path": "/core/v1/tag",
+      "summary": "Criar",
+      "tags": [
+        "Etiquetas"
+      ],
+      "page": "post_v1-tag"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/tag/color",
+      "full_path": "/core/v1/tag/color",
+      "summary": "Listar cores",
+      "tags": [
+        "Etiquetas"
+      ],
+      "page": "get_v1-tag-color"
+    },
+    {
+      "service": "core",
+      "method": "DELETE",
+      "path": "/v1/tag/{id}",
+      "full_path": "/core/v1/tag/{id}",
+      "summary": "Excluir",
+      "tags": [
+        "Etiquetas"
+      ],
+      "page": "delete_v1-tag-id"
+    },
+    {
+      "service": "core",
+      "method": "PUT",
+      "path": "/v1/tag/{id}",
+      "full_path": "/core/v1/tag/{id}",
+      "summary": "Atualizar",
+      "tags": [
+        "Etiquetas"
+      ],
+      "page": "put_v1-tag-id"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/webhook/event",
+      "full_path": "/core/v1/webhook/event",
+      "summary": "Listar eventos",
+      "tags": [
+        "Webhooks"
+      ],
+      "page": "get_v1-webhook-event"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/webhook/subscription",
+      "full_path": "/core/v1/webhook/subscription",
+      "summary": "Listar assinaturas",
+      "tags": [
+        "Webhooks"
+      ],
+      "page": "get_v1-webhook-subscription"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v1/webhook/subscription",
+      "full_path": "/core/v1/webhook/subscription",
+      "summary": "Cria assinatura",
+      "tags": [
+        "Webhooks"
+      ],
+      "page": "post_v1-webhook-subscription"
+    },
+    {
+      "service": "core",
+      "method": "DELETE",
+      "path": "/v1/webhook/subscription/{subscriptionId}",
+      "full_path": "/core/v1/webhook/subscription/{subscriptionId}",
+      "summary": "Remove assinatura",
+      "tags": [
+        "Webhooks"
+      ],
+      "page": "delete_v1-webhook-subscription-subscriptionid"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v1/webhook/subscription/{subscriptionId}",
+      "full_path": "/core/v1/webhook/subscription/{subscriptionId}",
+      "summary": "Busca assinatura por ID",
+      "tags": [
+        "Webhooks"
+      ],
+      "page": "get_v1-webhook-subscription-subscriptionid"
+    },
+    {
+      "service": "core",
+      "method": "PUT",
+      "path": "/v1/webhook/subscription/{subscriptionId}",
+      "full_path": "/core/v1/webhook/subscription/{subscriptionId}",
+      "summary": "Atualiza assinatura",
+      "tags": [
+        "Webhooks"
+      ],
+      "page": "put_v1-webhook-subscription-subscriptionid"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v2/contact/batch",
+      "full_path": "/core/v2/contact/batch",
+      "summary": "Salvar em massa",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "post_v2-contact-batch"
+    },
+    {
+      "service": "core",
+      "method": "PUT",
+      "path": "/v2/contact/{id}",
+      "full_path": "/core/v2/contact/{id}",
+      "summary": "Atualizar",
+      "tags": [
+        "Contatos"
+      ],
+      "page": "put_v2-contact-id"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v2/department",
+      "full_path": "/core/v2/department",
+      "summary": "Listar",
+      "tags": [
+        "Equipes"
+      ],
+      "page": "get_v2-department"
+    },
+    {
+      "service": "core",
+      "method": "GET",
+      "path": "/v2/file",
+      "full_path": "/core/v2/file",
+      "summary": "Obter url para upload",
+      "tags": [
+        "Arquivos"
+      ],
+      "page": "get_v2-file"
+    },
+    {
+      "service": "core",
+      "method": "POST",
+      "path": "/v2/file",
+      "full_path": "/core/v2/file",
+      "summary": "Salvar arquivo",
+      "tags": [
+        "Arquivos"
+      ],
+      "page": "post_v2-file"
+    },
+    {
+      "service": "crm",
+      "method": "GET",
+      "path": "/v1/panel/card/{cardId}/note",
+      "full_path": "/crm/v1/panel/card/{cardId}/note",
+      "summary": "Listar anotações",
+      "tags": [
+        "Cards"
+      ],
+      "page": "get_v1-panel-card-cardid-note"
+    },
+    {
+      "service": "crm",
+      "method": "POST",
+      "path": "/v1/panel/card/{cardId}/note",
+      "full_path": "/crm/v1/panel/card/{cardId}/note",
+      "summary": "Adicionar anotação",
+      "tags": [
+        "Cards"
+      ],
+      "page": "post_v1-panel-card-cardid-note"
+    },
+    {
+      "service": "crm",
+      "method": "DELETE",
+      "path": "/v1/panel/card/{cardId}/note/{noteId}",
+      "full_path": "/crm/v1/panel/card/{cardId}/note/{noteId}",
+      "summary": "Remover anotação",
+      "tags": [
+        "Cards"
+      ],
+      "page": "delete_v1-panel-card-cardid-note-noteid"
+    },
+    {
+      "service": "crm",
+      "method": "GET",
+      "path": "/v1/panel/{id}",
+      "full_path": "/crm/v1/panel/{id}",
+      "summary": "Obter por ID",
+      "tags": [
+        "Painéis"
+      ],
+      "page": "get_v1-panel-id"
+    },
+    {
+      "service": "crm",
+      "method": "GET",
+      "path": "/v1/panel/{id}/custom-fields",
+      "full_path": "/crm/v1/panel/{id}/custom-fields",
+      "summary": "Campos personalizados",
+      "tags": [
+        "Painéis"
+      ],
+      "page": "get_v1-panel-id-custom-fields"
+    },
+    {
+      "service": "crm",
+      "method": "GET",
+      "path": "/v1/panel/{id}/lost-reason",
+      "full_path": "/crm/v1/panel/{id}/lost-reason",
+      "summary": "Listar motivos de perda",
+      "tags": [
+        "Painéis"
+      ],
+      "page": "get_v1-panel-id-lost-reason"
+    },
+    {
+      "service": "crm",
+      "method": "GET",
+      "path": "/v2/panel",
+      "full_path": "/crm/v2/panel",
+      "summary": "Listar painéis",
+      "tags": [
+        "Painéis"
+      ],
+      "page": "get_v2-panel"
+    },
+    {
+      "service": "crm",
+      "method": "GET",
+      "path": "/v2/panel/card",
+      "full_path": "/crm/v2/panel/card",
+      "summary": "Listar",
+      "tags": [
+        "Cards"
+      ],
+      "page": "get_v2-panel-card"
+    },
+    {
+      "service": "crm",
+      "method": "POST",
+      "path": "/v2/panel/card",
+      "full_path": "/crm/v2/panel/card",
+      "summary": "Criar",
+      "tags": [
+        "Cards"
+      ],
+      "page": "post_v2-panel-card"
+    },
+    {
+      "service": "crm",
+      "method": "GET",
+      "path": "/v2/panel/card/{id}",
+      "full_path": "/crm/v2/panel/card/{id}",
+      "summary": "Obter por ID",
+      "tags": [
+        "Cards"
+      ],
+      "page": "get_v2-panel-card-id"
+    },
+    {
+      "service": "crm",
+      "method": "POST",
+      "path": "/v2/panel/card/{id}/duplicate",
+      "full_path": "/crm/v2/panel/card/{id}/duplicate",
+      "summary": "Duplicar",
+      "tags": [
+        "Cards"
+      ],
+      "page": "post_v2-panel-card-id-duplicate"
+    },
+    {
+      "service": "crm",
+      "method": "PUT",
+      "path": "/v3/panel/card/{id}",
+      "full_path": "/crm/v3/panel/card/{id}",
+      "summary": "Atualizar",
+      "tags": [
+        "Cards"
+      ],
+      "page": "put_v3-panel-card-id"
+    }
+  ],
+  "guides": [
+    {
+      "title": "Autenticação",
+      "slug": "autenticação",
+      "desc": "Entenda como autenticar suas requisições para utilizar a API.",
+      "url": "https://flwchat.readme.io/reference/autenticação"
+    },
+    {
+      "title": "Paginação",
+      "slug": "paginação",
+      "desc": "Entenda como a paginação nos endpoints de listagem funciona.",
+      "url": "https://flwchat.readme.io/reference/paginação"
+    },
+    {
+      "title": "Rate limiting",
+      "slug": "rate-limiting",
+      "desc": "",
+      "url": "https://flwchat.readme.io/reference/rate-limiting"
+    },
+    {
+      "title": "Login integrado",
+      "slug": "login-integrado",
+      "desc": "É possível integrar o login entre plataformas, gerando um token via API e direcionando o usuário",
+      "url": "https://flwchat.readme.io/reference/login-integrado"
+    },
+    {
+      "title": "Webhooks",
+      "slug": "webhooks-1",
+      "desc": "Entenda como receber eventos em outro sistema.",
+      "url": "https://flwchat.readme.io/reference/webhooks-1"
+    },
+    {
+      "title": "Webhook no Chatbot",
+      "slug": "webhook-no-chatbot",
+      "desc": "",
+      "url": "https://flwchat.readme.io/reference/webhook-no-chatbot"
+    },
+    {
+      "title": "Rastreio de campanha UTM",
+      "slug": "rastreio-de-campanha-utm",
+      "desc": "Entenda como rastrear sua campanha utilizando padrões UTM",
+      "url": "https://flwchat.readme.io/reference/rastreio-de-campanha-utm"
+    },
+    {
+      "title": "Informações para Firewall",
+      "slug": "informações-para-firewall",
+      "desc": "Empresas que tem regras mais rígidas de firewall podem usar as informações abaixo para configurar suas regras",
+      "url": "https://flwchat.readme.io/reference/informações-para-firewall"
+    },
+    {
+      "title": "1. Criar um assistente",
+      "slug": "1-criar-um-assistente-1",
+      "desc": "Neste primeiro passo vamos criar juntos um agente IA e configurar as primeiras etapas da integração com o assistente no N8N.",
+      "url": "https://flwchat.readme.io/reference/1-criar-um-assistente-1"
+    },
+    {
+      "title": "2. Criar o loop no chatbot",
+      "slug": "2-criar-o-loop-no-chatbot",
+      "desc": "Entenda como criar o modelo de chatbot e configurar o loop de modo que as mensagens enviadas não se percam e sejam sempre processadas por seu assistente.",
+      "url": "https://flwchat.readme.io/reference/2-criar-o-loop-no-chatbot"
+    },
+    {
+      "title": "3. Como ler e responder textos",
+      "slug": "3-como-ler-e-responder-textos",
+      "desc": "Vamos adicionar a capacidade de ler e responder textos usando o ChatGPT.",
+      "url": "https://flwchat.readme.io/reference/3-como-ler-e-responder-textos"
+    },
+    {
+      "title": "4. Como processar áudios",
+      "slug": "4-como-processar-áudios",
+      "desc": "Nessa etapa vamos ensinar como adicionar a capacidade de processar áudios à sua IA.",
+      "url": "https://flwchat.readme.io/reference/4-como-processar-áudios"
+    },
+    {
+      "title": "5. Como processar imagens",
+      "slug": "5-como-processar-imagens",
+      "desc": "Nessa etapa vamos ensinar como adicionar a capacidade de processar imagens à sua IA.",
+      "url": "https://flwchat.readme.io/reference/5-como-processar-imagens"
+    },
+    {
+      "title": "Criar token para integração",
+      "slug": "criar-token-para-integração",
+      "desc": "",
+      "url": "https://flwchat.readme.io/reference/criar-token-para-integração"
+    },
+    {
+      "title": "MAKE",
+      "slug": "make",
+      "desc": "",
+      "url": "https://flwchat.readme.io/reference/make"
+    },
+    {
+      "title": "N8N",
+      "slug": "n8n",
+      "desc": "",
+      "url": "https://flwchat.readme.io/reference/n8n"
+    }
+  ]
+}
