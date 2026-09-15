@@ -31,10 +31,13 @@ Não usa Claude Code? Escolha um:
 
 | Ferramenta | O que fazer |
 |---|---|
-| ChatGPT / Gemini | anexar `llms-full.md` à conversa (ou colar `SKILL.md`, que é menor) |
+| Codex CLI (ChatGPT) | clonar em `~/.codex/` e apontar no `AGENTS.md` — ver [INSTALL.md](INSTALL.md) |
+| ChatGPT / Gemini (navegador) | anexar `llms-full.md` à conversa (ou colar `SKILL.md`, que é menor) |
 | Cursor / Copilot / Windsurf | clonar a pasta dentro do repositório do projeto |
 | Postman | importar `postman/*.postman_collection.json` e preencher a variável `token` |
 | Qualquer IA, sem clonar | colar a URL: https://raw.githubusercontent.com/thiagojbs/flwchat-api-kb/main/SKILL.md |
+
+Passo a passo por ferramenta, com os caminhos exatos: **[INSTALL.md](INSTALL.md)**.
 
 **Cada pessoa usa o próprio token** (`Ajustes > Integrações > Integração via API`). Nunca comite um
 `pn_...` aqui — o repositório é público.
