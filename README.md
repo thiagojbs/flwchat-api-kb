@@ -17,6 +17,31 @@ Fonte: <https://flwchat.readme.io> · **109 endpoints** em 3 serviços · scrape
 | `llms-full.md` | Tudo num arquivo só (~94k tokens) para colar em janela de contexto | 376 KB |
 | `index.json` | As 109 operações em JSON (método, path, resumo, tag, página de origem) | 33 KB |
 
+## Para o time — instalação em 1 minuto
+
+```bash
+git clone https://github.com/thiagojbs/flwchat-api-kb.git
+cp -R flwchat-api-kb ~/.claude/skills/flwchat-api   # Claude Code: carrega sozinho
+```
+
+Depois disso, basta pedir em linguagem natural ("manda um template pelo flw.chat para esse número")
+que o Claude já sabe a base URL, a auth e o payload — sem consultar o site.
+
+Não usa Claude Code? Escolha um:
+
+| Ferramenta | O que fazer |
+|---|---|
+| ChatGPT / Gemini | anexar `llms-full.md` à conversa (ou colar `SKILL.md`, que é menor) |
+| Cursor / Copilot / Windsurf | clonar a pasta dentro do repositório do projeto |
+| Postman | importar `postman/*.postman_collection.json` e preencher a variável `token` |
+| Qualquer IA, sem clonar | colar a URL: https://raw.githubusercontent.com/thiagojbs/flwchat-api-kb/main/SKILL.md |
+
+**Cada pessoa usa o próprio token** (`Ajustes > Integrações > Integração via API`). Nunca comite um
+`pn_...` aqui — o repositório é público.
+
+Quando a flw.chat mudar a documentação, quem rodar `python3 build.py --no-cache` e der push atualiza
+o time inteiro; o `git diff` mostra exatamente o que mudou na API.
+
 ## Como usar
 
 **Claude Code** — copie a pasta para dentro do projeto e aponte o `CLAUDE.md` para `SKILL.md`, ou
